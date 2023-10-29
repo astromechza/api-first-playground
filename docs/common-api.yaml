@@ -1,3 +1,7 @@
+openapi: 3.0.0
+info:
+  title: Common components
+  version: 1.0.0
 components:
    securitySchemes:
      BearerToken:
@@ -47,31 +51,31 @@ components:
       schema:
         type: string
   responses:
-    400:
+    "400":
       description: The request was invalid.
       content:
         application/problem+json:
           schema:
             $ref: '#/components/schemas/Problem'
-    401:
+    "401":
       description: The request was not successfully authenticated.
       content:
         application/problem+json:
           schema:
             $ref: '#/components/schemas/Problem'
-    403:
+    "403":
       description: The request was authenticated but the operation was forbidden or not allowed.
       content:
         application/problem+json:
           schema:
             $ref: '#/components/schemas/Problem'
-    404:
+    "404":
       description: The resource or subresource does not exist.
       content:
         application/problem+json:
           schema:
             $ref: '#/components/schemas/Problem'
-    409:
+    "409":
       description: A conflict occurred while processing the request.
       content:
         application/problem+json:
