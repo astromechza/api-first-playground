@@ -1,4 +1,12 @@
 components:
+   securitySchemes:
+     BearerToken:
+       type: http
+       description: An HTTP bearer token containing a serialized JWT.
+       in: header
+       name: Authorization
+       scheme: bearer
+       bearerFormat: JWT
   headers:
     Etag:
       description: The Etag of a resource
