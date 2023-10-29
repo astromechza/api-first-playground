@@ -1,0 +1,92 @@
+components:
+  headers:
+    Etag:
+      description: The Etag of a resource
+      example: "1234567890abcdef"
+      schema:
+        type: string
+  parameters:
+    idempotencyKeyHeader:
+      name: Idempotency-Key
+      in: header
+      description: An HTTP Idempotency-Key
+      example: "0xr$P0Cu4@DB"
+      required: false
+      schema:
+        type: string
+    limitQueryParam:
+      name: limit
+      in: query
+      description: The maximum number of items to return in a page of results
+      required: false
+      example: 50
+      schema:
+        type: integer
+    cursorQueryParam:
+      name: cursor
+      in: query
+      description: The cursor to request from
+      required: false
+      example: "AAAAAAAAAA=="
+      schema:
+        type: string
+    ifMatchHeaderParam:
+      name: If-Match
+      in: header
+      description: Indicate that the request should only succeed if there is an etag match
+      required: false
+      example: "1234567890abcdef"
+      schema:
+        type: string
+  responses:
+    400:
+      description: The request was invalid.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    401:
+      description: The request was not successfully authenticated.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    403:
+      description: The request was authenticated but the operation was forbidden or not allowed.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    404:
+      description: The resource or subresource does not exist.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    409:
+      description: A conflict occurred while processing the request.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+  schemas:
+    Problem:
+      type: object
+      required:
+        - status
+        - type
+        - title
+      properties:
+        status:
+          type: integer
+          example: 500
+        type:
+          type: string
+          example: "about:blank"
+        title:
+          type: string
+          example: "An internal error occurred"
+        detail:
+          type: string
+          example: "An error occurred while retrieving additional data"
+      additionalProperties: true
