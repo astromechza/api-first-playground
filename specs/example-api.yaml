@@ -1,4 +1,11 @@
 openapi: 3.0.0
+info:
+  description: Do things
+  contact: {}
 paths:
   /my/resource:
-    get: {}
+    get: 
+      operationId: doThing
+      description: Do the thing!
+      tags:
+      - Things
