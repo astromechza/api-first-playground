@@ -4,16 +4,10 @@ Example of api-first with maximum value and minimal effort.
 
 ## Part 1 - Publishing common API guidelines and re-usable specs
 
-The directory in ./docs is published to https://api-first-playground.projects.meierhost.com and contains:
+The directory in ./docs is published to https://astromechza.github.io/api-first-playground/ and contains:
 
 - [README.md](docs/README.md) - A description of the API guidelines.
 - [common-api.yaml](docs/common-api.yaml) - A partial API document containing re-usable API elements.
-
-I've setup a custom DNS domain for the project so that it can be hosted on Github Pages.
-
-```
-CNAME api-first-playground.projects.meierhost.com -> astromechza.github.io
-```
 
 ## Part 2 - Re-using specs
 
