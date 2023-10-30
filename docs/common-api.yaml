@@ -3,14 +3,14 @@ info:
   title: Common components
   version: 1.0.0
 components:
-   securitySchemes:
-     BearerToken:
-       type: http
-       description: An HTTP bearer token containing a serialized JWT.
-       in: header
-       name: Authorization
-       scheme: bearer
-       bearerFormat: JWT
+  securitySchemes:
+    BearerToken:
+      type: http
+      description: An HTTP bearer token containing a serialized JWT.
+      in: header
+      name: Authorization
+      scheme: bearer
+      bearerFormat: JWT
   headers:
     Etag:
       description: The Etag of a resource
