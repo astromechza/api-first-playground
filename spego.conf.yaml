@@ -1,0 +1,4 @@
+---
+openapi:
+  ruleset:
+    extends: [['spego:oas', 'all']]

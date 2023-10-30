@@ -1,0 +1,9 @@
+# Config used for generating the API models and server stubs based on the openapi/spec.yaml
+package: common
+generate:
+  models: true
+  echo-server: true
+  strict-server: true
+output: server.gen.go
+output-options:
+  skip-prune: true

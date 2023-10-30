@@ -1,0 +1,11 @@
+# Config used for generating the API models and server stubs based on the openapi/spec.yaml
+package: src
+generate:
+  models: true
+  echo-server: true
+  strict-server: true
+import-mapping:
+  "https://astromechza.github.io/api-first-playground/common-api.yaml": github.com/astromechza/api-first-playground/src/common
+output: server.gen.go
+output-options:
+  skip-prune: true
